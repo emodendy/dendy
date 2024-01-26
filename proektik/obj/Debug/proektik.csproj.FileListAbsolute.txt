@@ -1,0 +1,5 @@
+C:\Users\arsen\source\repos\dendy\proektik\obj\Debug\proektik.csproj.AssemblyReference.cache
+C:\Users\arsen\source\repos\dendy\proektik\obj\Debug\MainWindow.g.cs
+C:\Users\arsen\source\repos\dendy\proektik\obj\Debug\App.g.cs
+C:\Users\arsen\source\repos\dendy\proektik\obj\Debug\proektik_MarkupCompile.cache
+C:\Users\arsen\source\repos\dendy\proektik\obj\Debug\proektik_MarkupCompile.lref
