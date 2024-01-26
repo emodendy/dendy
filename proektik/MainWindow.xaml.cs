@@ -20,9 +20,19 @@ namespace proektik
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+            choice.ItemsSource = new List<string>()
+            {
+                "Warrior", "Rogue", "Wizard"
+            };
+        }
+
+        private void choice_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
