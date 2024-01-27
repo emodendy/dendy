@@ -28,6 +28,9 @@ namespace proektik
             {
                 "Warrior", "Rogue", "Wizard"
             };
+            Warrior warrior = new Warrior();
+            Rogue rogue = new Rogue();
+            Wizard wizard = new Wizard();
         }
 
         private void choice_SelectionChanged(object sender, SelectionChangedEventArgs e)
