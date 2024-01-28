@@ -39,8 +39,8 @@ namespace proektik
 
         public int strength
 		{
-			get { return strength; }
-			set { strength = value; }
+			get { return _strength; }
+			set { _strength = value; }
 		}
  
         public int maxStrength

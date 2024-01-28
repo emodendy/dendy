@@ -20,7 +20,9 @@ namespace proektik
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        Warrior warrior = new Warrior();
+        Rogue rogue = new Rogue();
+        Wizard wizard = new Wizard();
         public MainWindow()
         {
             InitializeComponent();
@@ -28,14 +30,38 @@ namespace proektik
             {
                 "Warrior", "Rogue", "Wizard"
             };
-            Warrior warrior = new Warrior();
-            Rogue rogue = new Rogue();
-            Wizard wizard = new Wizard();
+           
         }
-
         private void choice_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (choice.SelectedItem.ToString() == "Warrior")
+            {
+                HP.Content = $"HP: {warrior.health}";
+                MANA.Content = $"MANA: {warrior.mana}";
+                lbDexterity.Content = $"dexterity: {warrior.dexterity}";
+                lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
+                lbStrength.Content = $"Strength: {warrior.strength}";
+                lbVitality.Content = $"Vitality: {warrior.vitality}";
+            }
+            if (choice.SelectedItem.ToString() == "Rogue") 
+            { 
+                HP.Content = $"HP: {rogue.health}";
+                MANA.Content = $"MANA: {rogue.mana}";
+                lbDexterity.Content = $"dexterity: {rogue.dexterity}";
+                lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
+                lbStrength.Content = $"Strength: {rogue.strength}";
+                lbVitality.Content = $"Vitality: {rogue.vitality}"; 
+            }
+            if (choice.SelectedItem.ToString() == "Wizard")
+            {
+                HP.Content = $"HP: {wizard.health}";
+                MANA.Content = $"MANA: {wizard.mana}";
+                lbDexterity.Content = $"dexterity: {wizard.dexterity}";
+                lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
+                lbStrength.Content = $"Strength: {wizard.strength}";
+                lbVitality.Content = $"Vitality: {wizard.vitality}";
+            }
         }
+
     }
 }
