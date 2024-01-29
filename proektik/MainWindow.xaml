@@ -13,10 +13,10 @@
         <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Height="35" Margin="323,16,0,0" VerticalAlignment="Top" Width="85" FontSize="18" FontFamily="Cascadia Code SemiBold"/>
         <Label x:Name="MANA" Content="Mana" HorizontalAlignment="Left" Height="35" Margin="462,16,0,0" VerticalAlignment="Top" Width="108" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
         <Label x:Name="lbVitality" Content="vitality:" HorizontalAlignment="Left" Height="32" Margin="25,169,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label x:Name="lbInteligence" Content="Inteligence:" HorizontalAlignment="Left" Height="31" Margin="25,215,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Button Content="+" HorizontalAlignment="Left" Height="39" Margin="232,74,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
-        <Button Content="+" HorizontalAlignment="Left" Height="39" Margin="232,120,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
-        <Button Content="+" HorizontalAlignment="Left" Height="39" Margin="232,167,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
-        <Button Content="+" HorizontalAlignment="Left" Height="39" Margin="232,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
+        <Label x:Name="lbInteligence" Content="inteligence:" HorizontalAlignment="Left" Height="31" Margin="25,215,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Button x:Name="str_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,74,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="str_btn_Click"/>
+        <Button x:Name="dex_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,120,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
+        <Button x:Name="vit_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,167,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
+        <Button x:Name="int_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
     </Grid>
 </Window>

@@ -20,6 +20,9 @@ namespace proektik
     /// </summary>
     public partial class MainWindow : Window
     {
+        float warbuffer = 0;
+        float rogbuffer = 0;
+        float wizbuffer = 0;
         Warrior warrior = new Warrior();
         Rogue rogue = new Rogue();
         Wizard wizard = new Wizard();
@@ -63,5 +66,27 @@ namespace proektik
             }
         }
 
+        private void str_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (choice.SelectedItem.ToString() == "Warrior")
+            {
+                warbuffer += 1;
+                warrior.strength = Convert.ToInt32(30 + warbuffer);
+                lbStrength.Content = $"Strength: {warrior.strength}";
+            }
+            if (choice.SelectedItem.ToString() == "Rogue")
+            {
+                rogbuffer += 1;
+                rogue.strength = Convert.ToInt32(20 + rogbuffer);
+                lbStrength.Content = $"Strength: {rogue.strength}";
+            }
+            if (choice.SelectedItem.ToString() == "Wizard")
+            {
+                wizbuffer += 1;
+                wizard.strength = Convert.ToInt32(15 + wizbuffer);
+                lbStrength.Content = $"Strength: {wizard.strength}";
+            }
+        }
     }
 }
