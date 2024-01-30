@@ -15,8 +15,8 @@
         <Label x:Name="lbVitality" Content="vitality:" HorizontalAlignment="Left" Height="32" Margin="25,169,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
         <Label x:Name="lbInteligence" Content="inteligence:" HorizontalAlignment="Left" Height="31" Margin="25,215,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
         <Button x:Name="str_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,74,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="str_btn_Click"/>
-        <Button x:Name="dex_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,120,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
-        <Button x:Name="vit_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,167,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
-        <Button x:Name="int_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White"/>
+        <Button x:Name="dex_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,120,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="dex_btn_Click"/>
+        <Button x:Name="vit_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,167,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="vit_btn_Click"/>
+        <Button x:Name="int_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="int_btn_Click"/>
     </Grid>
 </Window>
