@@ -20,10 +20,8 @@ namespace proektik
     /// </summary>
     public partial class MainWindow : Window
     {
-        double hpwarbuffer = 0;
         double hprogbuffer = 0;
         double hpwizbuffer = 0;
-        double manawarbuffer = 0;
         double manarogbuffer = 0;
         double manawizbuffer = 0.5;
         int tokens = 0;
