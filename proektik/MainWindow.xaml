@@ -7,18 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900">
     <Grid x:Name="game">
-        <ComboBox x:Name="choice" HorizontalAlignment="Left" Margin="25,21,0,0" VerticalAlignment="Top" Width="200" Height="25" FontFamily="Cascadia Code SemiBold" FontSize="14" SelectionChanged="choice_SelectionChanged" />
-        <Label x:Name="lbStrength" Content="strength:" HorizontalAlignment="Left" Height="35" Margin="25,76,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label x:Name="lbDexterity" Content="dexterity:" HorizontalAlignment="Left" Height="30" Margin="25,123,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Height="35" Margin="323,16,0,0" VerticalAlignment="Top" Width="85" FontSize="18" FontFamily="Cascadia Code SemiBold"/>
-        <Label x:Name="MANA" Content="Mana" HorizontalAlignment="Left" Height="35" Margin="462,16,0,0" VerticalAlignment="Top" Width="108" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label x:Name="lbVitality" Content="vitality:" HorizontalAlignment="Left" Height="32" Margin="25,169,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label x:Name="lbInteligence" Content="inteligence:" HorizontalAlignment="Left" Height="31" Margin="25,215,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Button x:Name="str_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,74,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="str_btn_Click"/>
-        <Button x:Name="dex_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,120,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="dex_btn_Click"/>
-        <Button x:Name="vit_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,167,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="vit_btn_Click"/>
-        <Button x:Name="int_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="232,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="int_btn_Click"/>
-        <Label Content="Tokens:" HorizontalAlignment="Left" Height="35" Margin="25,263,0,0" VerticalAlignment="Top" Width="86" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <TextBox x:Name="TokenCount" HorizontalAlignment="Left" Height="35" Margin="125,263,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" FontFamily="Cascadia Code SemiBold" FontSize="18" TextChanged="TokenCount_TextChanged"/>
+        <ComboBox x:Name="choice" HorizontalAlignment="Left" Margin="35,21,0,0" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Cascadia Code SemiBold" FontSize="14" SelectionChanged="choice_SelectionChanged" />
+        <Label x:Name="lbStrength" Content="strength:" HorizontalAlignment="Left" Height="35" Margin="35,76,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="lbDexterity" Content="dexterity:" HorizontalAlignment="Left" Height="30" Margin="35,123,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="HP" Content="HP" HorizontalAlignment="Left" Height="35" Margin="339,16,0,0" VerticalAlignment="Top" Width="89" FontSize="18" FontFamily="Cascadia Code SemiBold"/>
+        <Label x:Name="MANA" Content="Mana" HorizontalAlignment="Left" Height="35" Margin="476,16,0,0" VerticalAlignment="Top" Width="108" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="lbVitality" Content="vitality:" HorizontalAlignment="Left" Height="32" Margin="35,169,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="lbInteligence" Content="inteligence:" HorizontalAlignment="Left" Height="31" Margin="35,215,0,0" VerticalAlignment="Top" Width="200" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Button x:Name="str_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="236,76,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="str_btn_Click"/>
+        <Button x:Name="dex_btn" Content="+" HorizontalAlignment="Left" Height="40" Margin="236,121,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="dex_btn_Click"/>
+        <Button x:Name="vit_btn" Content="+" HorizontalAlignment="Left" Height="38" Margin="236,168,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="vit_btn_Click"/>
+        <Button x:Name="int_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="236,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="int_btn_Click"/>
+        <Label Content="Tokens:" HorizontalAlignment="Left" Height="35" Margin="632,16,0,0" VerticalAlignment="Top" Width="86" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <TextBox x:Name="TokenCount" Height="35" Margin="765,16,35,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontFamily="Cascadia Code SemiBold" FontSize="18" TextChanged="TokenCount_TextChanged"/>
+        <Label Content="p.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,272,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label Content="m.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,324,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label Content="crt.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,375,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label Content="armor:" HorizontalAlignment="Left" Height="35" Margin="219,272,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label Content="m.defence:" HorizontalAlignment="Left" Height="35" Margin="219,324,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label Content="crt.chance:" HorizontalAlignment="Left" Height="35" Margin="219,375,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Image Margin="654,94,35,71" Source="/Image1.png" Stretch="Fill"/>
     </Grid>
 </Window>
