@@ -26,6 +26,7 @@ namespace proektik
         double manawarbuffer = 0;
         double manarogbuffer = 0;
         double manawizbuffer = 0.5;
+        int tokens = 0;
 
         Warrior warrior = new Warrior();
         Rogue rogue = new Rogue();
@@ -43,30 +44,33 @@ namespace proektik
         {
             if (choice.SelectedItem.ToString() == "Warrior")
             {
-                HP.Content = $"HP: {warrior.health}";
-                MANA.Content = $"MANA: {warrior.mana}";
-                lbDexterity.Content = $"dexterity: {warrior.dexterity}";
-                lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
-                lbStrength.Content = $"Strength: {warrior.strength}";
-                lbVitality.Content = $"Vitality: {warrior.vitality}";
+                    HP.Content = $"HP: {warrior.health}";
+                    MANA.Content = $"MANA: {warrior.mana}";
+                    lbDexterity.Content = $"dexterity: {warrior.dexterity}";
+                    lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
+                    lbStrength.Content = $"Strength: {warrior.strength}";
+                    lbVitality.Content = $"Vitality: {warrior.vitality}";
+ 
             }
             if (choice.SelectedItem.ToString() == "Rogue") 
-            { 
-                HP.Content = $"HP: {rogue.health}";
-                MANA.Content = $"MANA: {rogue.mana}";
-                lbDexterity.Content = $"dexterity: {rogue.dexterity}";
-                lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
-                lbStrength.Content = $"Strength: {rogue.strength}";
-                lbVitality.Content = $"Vitality: {rogue.vitality}"; 
+            {
+
+                    HP.Content = $"HP: {rogue.health}";
+                    MANA.Content = $"MANA: {rogue.mana}";
+                    lbDexterity.Content = $"dexterity: {rogue.dexterity}";
+                    lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
+                    lbStrength.Content = $"Strength: {rogue.strength}";
+                    lbVitality.Content = $"Vitality: {rogue.vitality}";
+
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
-                HP.Content = $"HP: {wizard.health}";
-                MANA.Content = $"MANA: {wizard.mana}";
-                lbDexterity.Content = $"dexterity: {wizard.dexterity}";
-                lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
-                lbStrength.Content = $"Strength: {wizard.strength}";
-                lbVitality.Content = $"Vitality: {wizard.vitality}";
+                    HP.Content = $"HP: {wizard.health}";
+                    MANA.Content = $"MANA: {wizard.mana}";
+                    lbDexterity.Content = $"dexterity: {wizard.dexterity}";
+                    lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
+                    lbStrength.Content = $"Strength: {wizard.strength}";
+                    lbVitality.Content = $"Vitality: {wizard.vitality}";
             }
         }
 
@@ -74,18 +78,42 @@ namespace proektik
         {
             if (choice.SelectedItem.ToString() == "Warrior")
             {
-                warrior.strength +=1;
-                lbStrength.Content = $"Strength: {warrior.strength}";
+                if (warrior.strength < warrior.maxStrength)
+                {
+                    warrior.strength += 1;
+                    lbStrength.Content = $"Strength: {warrior.strength}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max HP is reached!!!");
+                }
             }
             if (choice.SelectedItem.ToString() == "Rogue")
             {
-                rogue.strength += 1;
-                lbStrength.Content = $"Strength: {rogue.strength}";
+                if (rogue.strength < rogue.maxStrength)
+                {
+                    rogue.strength += 1;
+                    lbStrength.Content = $"Strength: {rogue.strength}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max HP is reached!!!");
+                }
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
-                wizard.strength += 1;
-                lbStrength.Content = $"Strength: {wizard.strength}";
+                if (wizard.strength < wizard.maxStrength)
+                {
+                    wizard.strength += 1;
+                    lbStrength.Content = $"Strength: {wizard.strength}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max strength is reached!!!");
+                }
             }
         }
 
@@ -93,18 +121,42 @@ namespace proektik
         {
             if (choice.SelectedItem.ToString() == "Warrior")
             {
-                warrior.dexterity += 1;
-                lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
+                if (warrior.dexterity < warrior.maxDexterity)
+                {
+                    warrior.dexterity += 1;
+                    lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max dexterity is reached!!!");
+                }
             }
             if (choice.SelectedItem.ToString() == "Rogue")
             {
-                rogue.dexterity += 1;
-                lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
+                if (rogue.dexterity < rogue.maxDexterity)
+                {
+                    rogue.dexterity += 1;
+                    lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max dexterity is reached!!!");
+                }
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
-                rogue.dexterity += 1;
-                lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
+                if (wizard.dexterity < wizard.maxDexterity)
+                {
+                    wizard.dexterity += 1;
+                    lbDexterity.Content = $"Dexterity: {wizard.dexterity}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max dexterity is reached!!!");
+                }
             }
         }
 
@@ -112,26 +164,50 @@ namespace proektik
         {
             if (choice.SelectedItem == "Warrior")
             {
-                warrior.vitality += 1;
-                lbVitality.Content = $"Vitality: {warrior.vitality}";
-                warrior.health += 2;
-                HP.Content = $"HP: {warrior.health}";
+                if (warrior.vitality < wizard.maxVitality)
+                {
+                    warrior.vitality += 1;
+                    lbVitality.Content = $"Vitality: {warrior.vitality}";
+                    warrior.health += 2;
+                    HP.Content = $"HP: {warrior.health}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max vitality is reached!!!");
+                }
             }
             if (choice.SelectedItem.ToString() == "Rogue")
             {
-                rogue.vitality += 1;
-                lbVitality.Content = $"Vitality: {rogue.vitality}";
-                hprogbuffer += 1.5;
-                rogue.health = Convert.ToInt32(30 + hprogbuffer);
-                HP.Content = $"HP: {rogue.health}";
+                if (rogue.vitality < rogue.maxVitality)
+                {
+                    rogue.vitality += 1;
+                    lbVitality.Content = $"Vitality: {rogue.vitality}";
+                    hprogbuffer += 1.5;
+                    rogue.health = Convert.ToInt32(30 + hprogbuffer);
+                    HP.Content = $"HP: {rogue.health}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max vitality is reached!!!");
+                }    
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
-                wizard.vitality += 1;
-                lbVitality.Content = $"Vitality: {wizard.vitality}";
-                hpwizbuffer += 1.4;
-                wizard.health = Convert.ToInt32(21 + hpwizbuffer);
-                HP.Content = $"HP: {wizard.health}";
+                if (wizard.vitality < wizard.maxVitality)
+                {
+                    wizard.vitality += 1;
+                    lbVitality.Content = $"Vitality: {wizard.vitality}";
+                    hpwizbuffer += 1.4;
+                    wizard.health = Convert.ToInt32(21 + hpwizbuffer);
+                    HP.Content = $"HP: {wizard.health}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max vitality is reached!!!");
+                } 
             }
         }
 
@@ -139,27 +215,56 @@ namespace proektik
         {
             if (choice.SelectedItem == "Warrior")
             {
-                warrior.inteligence += 1;
-                lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
-                warrior.mana += 1;
-                MANA.Content = $"MANA: {warrior.mana}";
+                if (warrior.inteligence < warrior.maxInteligence)
+                {
+                    warrior.inteligence += 1;
+                    lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
+                    warrior.mana += 1;
+                    MANA.Content = $"MANA: {warrior.mana}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max inteligence is reached!!!");
+                }
             }
             if (choice.SelectedItem.ToString() == "Rogue")
             {
-                rogue.inteligence += 1;
-                lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
-                manarogbuffer += 1.2;
-                rogue.mana = Convert.ToInt32(18 + manarogbuffer);
-                MANA.Content = $"MANA: {rogue.mana}";
+                if (rogue.inteligence < rogue.maxInteligence)
+                {
+                    rogue.inteligence += 1;
+                    lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
+                    manarogbuffer += 1.2;
+                    rogue.mana = Convert.ToInt32(18 + manarogbuffer);
+                    MANA.Content = $"MANA: {rogue.mana}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max inteligence is reached!!!");
+                }   
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
-                wizard.inteligence += 1;
-                lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
-                manawizbuffer += 1.5;
-                wizard.mana = Convert.ToInt32(52 + manawizbuffer);
-                MANA.Content = $"MANA: {wizard.mana}";
+                if (wizard.inteligence < wizard.maxInteligence)
+                {
+                    wizard.inteligence += 1;
+                    lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
+                    manawizbuffer += 1.5;
+                    wizard.mana = Convert.ToInt32(52 + manawizbuffer);
+                    MANA.Content = $"MANA: {wizard.mana}";
+                    TokenCount.Text = (tokens - 1).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Max inteligence is reached!!!");
+                }
             }
+        }
+
+        private void TokenCount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tokens = Convert.ToInt32(TokenCount.Text);
         }
     }
 }
