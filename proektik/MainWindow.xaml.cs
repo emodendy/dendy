@@ -78,9 +78,16 @@ namespace proektik
             {
                 if (warrior.strength < warrior.maxStrength)
                 {
-                    warrior.strength += 1;
-                    lbStrength.Content = $"Strength: {warrior.strength}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        warrior.strength += 1;
+                        lbStrength.Content = $"Strength: {warrior.strength}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -91,9 +98,16 @@ namespace proektik
             {
                 if (rogue.strength < rogue.maxStrength)
                 {
-                    rogue.strength += 1;
-                    lbStrength.Content = $"Strength: {rogue.strength}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        rogue.strength += 1;
+                        lbStrength.Content = $"Strength: {rogue.strength}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -104,9 +118,16 @@ namespace proektik
             {
                 if (wizard.strength < wizard.maxStrength)
                 {
-                    wizard.strength += 1;
-                    lbStrength.Content = $"Strength: {wizard.strength}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        wizard.strength += 1;
+                        lbStrength.Content = $"Strength: {wizard.strength}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -121,9 +142,16 @@ namespace proektik
             {
                 if (warrior.dexterity < warrior.maxDexterity)
                 {
-                    warrior.dexterity += 1;
-                    lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        warrior.dexterity += 1;
+                        lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }   
                 }
                 else
                 {
@@ -134,9 +162,16 @@ namespace proektik
             {
                 if (rogue.dexterity < rogue.maxDexterity)
                 {
-                    rogue.dexterity += 1;
-                    lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        rogue.dexterity += 1;
+                        lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    } 
                 }
                 else
                 {
@@ -147,9 +182,16 @@ namespace proektik
             {
                 if (wizard.dexterity < wizard.maxDexterity)
                 {
-                    wizard.dexterity += 1;
-                    lbDexterity.Content = $"Dexterity: {wizard.dexterity}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        wizard.dexterity += 1;
+                        lbDexterity.Content = $"Dexterity: {wizard.dexterity}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    } 
                 }
                 else
                 {
@@ -164,11 +206,18 @@ namespace proektik
             {
                 if (warrior.vitality < wizard.maxVitality)
                 {
-                    warrior.vitality += 1;
-                    lbVitality.Content = $"Vitality: {warrior.vitality}";
-                    warrior.health += 2;
-                    HP.Content = $"HP: {warrior.health}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        warrior.vitality += 1;
+                        lbVitality.Content = $"Vitality: {warrior.vitality}";
+                        warrior.health += 2;
+                        HP.Content = $"HP: {warrior.health}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -179,12 +228,19 @@ namespace proektik
             {
                 if (rogue.vitality < rogue.maxVitality)
                 {
-                    rogue.vitality += 1;
-                    lbVitality.Content = $"Vitality: {rogue.vitality}";
-                    hprogbuffer += 1.5;
-                    rogue.health = Convert.ToInt32(30 + hprogbuffer);
-                    HP.Content = $"HP: {rogue.health}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        rogue.vitality += 1;
+                        lbVitality.Content = $"Vitality: {rogue.vitality}";
+                        hprogbuffer += 1.5;
+                        rogue.health = Convert.ToInt32(30 + hprogbuffer);
+                        HP.Content = $"HP: {rogue.health}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -195,12 +251,19 @@ namespace proektik
             {
                 if (wizard.vitality < wizard.maxVitality)
                 {
-                    wizard.vitality += 1;
-                    lbVitality.Content = $"Vitality: {wizard.vitality}";
-                    hpwizbuffer += 1.4;
-                    wizard.health = Convert.ToInt32(21 + hpwizbuffer);
-                    HP.Content = $"HP: {wizard.health}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        wizard.vitality += 1;
+                        lbVitality.Content = $"Vitality: {wizard.vitality}";
+                        hpwizbuffer += 1.4;
+                        wizard.health = Convert.ToInt32(21 + hpwizbuffer);
+                        HP.Content = $"HP: {wizard.health}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -213,13 +276,20 @@ namespace proektik
         {
             if (choice.SelectedItem == "Warrior")
             {
-                if (warrior.inteligence < warrior.maxInteligence)
-                {
-                    warrior.inteligence += 1;
-                    lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
-                    warrior.mana += 1;
-                    MANA.Content = $"MANA: {warrior.mana}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                if (warrior.inteligence < warrior.maxInteligence) 
+                { 
+                    if (tokens > 0)
+                    {
+                        warrior.inteligence += 1;
+                        lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
+                        warrior.mana += 1;
+                        MANA.Content = $"MANA: {warrior.mana}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -230,12 +300,19 @@ namespace proektik
             {
                 if (rogue.inteligence < rogue.maxInteligence)
                 {
-                    rogue.inteligence += 1;
-                    lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
-                    manarogbuffer += 1.2;
-                    rogue.mana = Convert.ToInt32(18 + manarogbuffer);
-                    MANA.Content = $"MANA: {rogue.mana}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        rogue.inteligence += 1;
+                        lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
+                        manarogbuffer += 1.2;
+                        rogue.mana = Convert.ToInt32(18 + manarogbuffer);
+                        MANA.Content = $"MANA: {rogue.mana}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }
                 }
                 else
                 {
@@ -244,14 +321,22 @@ namespace proektik
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
+
                 if (wizard.inteligence < wizard.maxInteligence)
                 {
-                    wizard.inteligence += 1;
-                    lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
-                    manawizbuffer += 1.5;
-                    wizard.mana = Convert.ToInt32(52 + manawizbuffer);
-                    MANA.Content = $"MANA: {wizard.mana}";
-                    TokenCount.Text = (tokens - 1).ToString();
+                    if (tokens > 0)
+                    {
+                        wizard.inteligence += 1;
+                        lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
+                        manawizbuffer += 1.5;
+                        wizard.mana = Convert.ToInt32(52 + manawizbuffer);
+                        MANA.Content = $"MANA: {wizard.mana}";
+                        TokenCount.Text = (tokens - 1).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough tokens");
+                    }           
                 }
                 else
                 {
@@ -262,7 +347,14 @@ namespace proektik
 
         private void TokenCount_TextChanged(object sender, TextChangedEventArgs e)
         {
-            tokens = Convert.ToInt32(TokenCount.Text);
+            try
+            {
+                tokens = Convert.ToInt32(TokenCount.Text);
+            }catch (FormatException)
+            {
+                MessageBox.Show("Введите число,а не строку!!!");
+            }
+           
         }
     }
 }
