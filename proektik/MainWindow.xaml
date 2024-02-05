@@ -20,12 +20,12 @@
         <Button x:Name="int_btn" Content="+" HorizontalAlignment="Left" Height="39" Margin="236,213,0,0" VerticalAlignment="Top" Width="50" FontFamily="Cascadia Code SemiBold" FontSize="24" Background="#FF1F2363" Foreground="White" Click="int_btn_Click"/>
         <Label Content="Tokens:" HorizontalAlignment="Left" Height="35" Margin="632,16,0,0" VerticalAlignment="Top" Width="86" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
         <TextBox x:Name="TokenCount" Height="35" Margin="765,16,35,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontFamily="Cascadia Code SemiBold" FontSize="18" TextChanged="TokenCount_TextChanged"/>
-        <Label Content="p.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,272,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label Content="m.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,324,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label Content="crt.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,375,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label Content="armor:" HorizontalAlignment="Left" Height="35" Margin="219,272,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label Content="m.defence:" HorizontalAlignment="Left" Height="35" Margin="219,324,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
-        <Label Content="crt.chance:" HorizontalAlignment="Left" Height="35" Margin="219,375,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="phys_dmg" Content="p.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,272,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="mag_dmg" Content="m.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,324,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="crt_dmg" Content="crt.dmg:" HorizontalAlignment="Left" Height="35" Margin="35,375,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="armor" Content="armor:" HorizontalAlignment="Left" Height="35" Margin="219,272,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="mag_def" Content="m.defence:" HorizontalAlignment="Left" Height="35" Margin="219,324,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
+        <Label x:Name="crt_chance" Content="crt.chance:" HorizontalAlignment="Left" Height="35" Margin="219,375,0,0" VerticalAlignment="Top" Width="150" FontFamily="Cascadia Code SemiBold" FontSize="18"/>
         <Image Margin="654,94,35,71" Source="/Image1.png" Stretch="Fill"/>
     </Grid>
 </Window>

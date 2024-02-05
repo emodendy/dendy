@@ -25,6 +25,9 @@ namespace proektik
         double manarogbuffer = 0;
         double manawizbuffer = 0.5;
         int tokens = 0;
+        double WarCrtChanceBuf;
+        double RogCrtChanceBuf;
+        double WizCrtChanceBuf;
 
         Warrior warrior = new Warrior();
         Rogue rogue = new Rogue();
@@ -48,7 +51,13 @@ namespace proektik
                     lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
                     lbStrength.Content = $"Strength: {warrior.strength}";
                     lbVitality.Content = $"Vitality: {warrior.vitality}";
- 
+                    phys_dmg.Content = $"p.dmg: {warrior.pdamage}";
+                    mag_dmg.Content = $"m.dmg: {warrior.mdamage}";
+                    crt_dmg.Content = $"crt.dmg: {warrior.crtDamage}";
+                    armor.Content = $"armor: {warrior.armor}";
+                    mag_def.Content = $"m.defense: {warrior.mdefense}";
+                    crt_chance.Content = $"crt_chance: {warrior.crtChance}";
+
             }
             if (choice.SelectedItem.ToString() == "Rogue") 
             {
@@ -59,6 +68,12 @@ namespace proektik
                     lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
                     lbStrength.Content = $"Strength: {rogue.strength}";
                     lbVitality.Content = $"Vitality: {rogue.vitality}";
+                    phys_dmg.Content = $"p.dmg: {rogue.pdamage}";
+                    mag_dmg.Content = $"m.dmg: {rogue.mdamage}";
+                    crt_dmg.Content = $"crt.dmg: {rogue.crtDamage}";
+                    armor.Content = $"armor: {rogue.armor}";
+                    mag_def.Content = $"m.defense: {rogue.mdefense}";
+                    crt_chance.Content = $"crt_chance: {rogue.crtChance}";
 
             }
             if (choice.SelectedItem.ToString() == "Wizard")
@@ -69,6 +84,12 @@ namespace proektik
                     lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
                     lbStrength.Content = $"Strength: {wizard.strength}";
                     lbVitality.Content = $"Vitality: {wizard.vitality}";
+                    phys_dmg.Content = $"p.dmg: {wizard.pdamage}";
+                    mag_dmg.Content = $"m.dmg: {wizard.mdamage}";
+                    crt_dmg.Content = $"crt.dmg: {wizard.crtDamage}";
+                    armor.Content = $"armor: {wizard.armor}";
+                    mag_def.Content = $"m.defense: {wizard.mdefense}";
+                    crt_chance.Content = $"crt_chance: {wizard.crtChance}";
             }
         }
 
@@ -82,6 +103,8 @@ namespace proektik
                     {
                         warrior.strength += 1;
                         lbStrength.Content = $"Strength: {warrior.strength}";
+                        warrior.health += 1;
+                        HP.Content = $"HP: {warrior.health}";
                         TokenCount.Text = (tokens - 1).ToString();
                     }
                     else
@@ -102,6 +125,8 @@ namespace proektik
                     {
                         rogue.strength += 1;
                         lbStrength.Content = $"Strength: {rogue.strength}";
+                        hprogbuffer += 0.5;
+                        HP.Content = $"HP: {rogue.health}";
                         TokenCount.Text = (tokens - 1).ToString();
                     }
                     else
@@ -122,6 +147,8 @@ namespace proektik
                     {
                         wizard.strength += 1;
                         lbStrength.Content = $"Strength: {wizard.strength}";
+                        hpwizbuffer += 0.2;
+                        HP.Content = $"HP: {wizard.health}";
                         TokenCount.Text = (tokens - 1).ToString();
                     }
                     else
@@ -146,6 +173,8 @@ namespace proektik
                     {
                         warrior.dexterity += 1;
                         lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
+                        warrior.crtDamage += 1;
+                        crt_dmg.Content = $"crt.dmg: {warrior.crtDamage}";
                         TokenCount.Text = (tokens - 1).ToString();
                     }
                     else
@@ -166,6 +195,8 @@ namespace proektik
                     {
                         rogue.dexterity += 1;
                         lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
+                        rogue.crtDamage += 1;
+                        crt_dmg.Content = $"crt.dmg: {rogue.crtDamage}";
                         TokenCount.Text = (tokens - 1).ToString();
                     }
                     else
@@ -186,6 +217,8 @@ namespace proektik
                     {
                         wizard.dexterity += 1;
                         lbDexterity.Content = $"Dexterity: {wizard.dexterity}";
+                        wizard.crtDamage += 1;
+                        crt_dmg.Content = $"crt.dmg: {wizard.crtDamage}";
                         TokenCount.Text = (tokens - 1).ToString();
                     }
                     else

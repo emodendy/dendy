@@ -20,8 +20,14 @@ namespace proektik
         private int _maxHealth;
         private int _mana;
         private int _maxMana;
+		private int _pdamage;
+		private int _armor;
+		private int _mdamage;
+		private int _mdefense;
+		private int _crtChance;
+		private int _crtDamage;
 
-        public Unit(int strength, int maxStrength, int dexterity, int maxDexterity, int inteligence, int maxInteligence, int vitality, int maxVitality, int health, int maxHealth, int mana, int maxMana)
+        public Unit(int strength, int maxStrength, int dexterity, int maxDexterity, int inteligence, int maxInteligence, int vitality, int maxVitality, int health, int maxHealth, int mana, int maxMana, int pdamage, int armor, int mdamage, int mdefense, int crtChance, int crtDamage)
         {
             _strength = strength;
             _maxStrength = maxStrength;
@@ -35,6 +41,12 @@ namespace proektik
             _maxHealth = maxHealth;
             _mana = mana;
             _maxMana = maxMana;
+            _pdamage = pdamage;
+            _armor = armor;
+            _mdamage = mdamage;
+            _mdefense = mdefense;
+            _crtChance = crtChance;
+            _crtDamage = crtDamage;
         }
 
         public int strength
@@ -108,6 +120,35 @@ namespace proektik
 			get { return _maxMana; }
 			set { _maxMana = value; }
 		}
-
-	}
+		public int pdamage
+		{
+			get { return _pdamage; }
+			set { _pdamage = value; }
+		}
+        public int armor
+        {
+            get { return _armor; }
+            set { _armor = value; }
+        }
+        public int mdamage
+        {
+            get { return _mdamage; }
+            set { _mdamage = value; }
+        }
+        public int mdefense
+        {
+            get { return _mdefense; }
+            set { _mdefense = value; }
+        }
+        public int crtChance
+        {
+            get { return _crtChance; }
+            set { _crtChance = value; }
+        }
+        public int crtDamage
+        {
+            get { return _crtDamage; }
+            set { _crtDamage = value; }
+        }
+    }
 }
