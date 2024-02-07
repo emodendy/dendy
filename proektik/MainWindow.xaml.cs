@@ -411,7 +411,8 @@ namespace proektik
             try
             {
                 tokens = Convert.ToInt32(TokenCount.Text);
-            }catch (FormatException)
+            }
+            catch (FormatException)
             {
                 MessageBox.Show("Введите число,а не строку!!!");
             }
