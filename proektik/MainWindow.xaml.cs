@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,9 +26,8 @@ namespace proektik
         double manarogbuffer = 0;
         double manawizbuffer = 0.5;
         int tokens = 0;
-        double WarCrtChanceBuf;
-        double RogCrtChanceBuf;
-        double WizCrtChanceBuf;
+        int level = 1;
+        int exp = 0;
 
         Warrior warrior = new Warrior();
         Rogue rogue = new Rogue();
@@ -39,57 +39,57 @@ namespace proektik
             {
                 "Warrior", "Rogue", "Wizard"
             };
-           
+
         }
         private void choice_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (choice.SelectedItem.ToString() == "Warrior")
             {
-                    HP.Content = $"HP: {warrior.health}";
-                    MANA.Content = $"MANA: {warrior.mana}";
-                    lbDexterity.Content = $"dexterity: {warrior.dexterity}";
-                    lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
-                    lbStrength.Content = $"Strength: {warrior.strength}";
-                    lbVitality.Content = $"Vitality: {warrior.vitality}";
-                    phys_dmg.Content = $"p.dmg: {warrior.pdamage}";
-                    mag_dmg.Content = $"m.dmg: {warrior.mdamage}";
-                    crt_dmg.Content = $"crt.dmg: {warrior.crtDamage}";
-                    armor.Content = $"armor: {warrior.armor}";
-                    mag_def.Content = $"m.defense: {warrior.mdefense}";
-                    crt_chance.Content = $"crt_chance: {warrior.crtChance}";
+                HP.Content = $"HP: {warrior.health}";
+                MANA.Content = $"MANA: {warrior.mana}";
+                lbDexterity.Content = $"dexterity: {warrior.dexterity}";
+                lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
+                lbStrength.Content = $"Strength: {warrior.strength}";
+                lbVitality.Content = $"Vitality: {warrior.vitality}";
+                phys_dmg.Content = $"p.dmg: {warrior.pdamage}";
+                mag_dmg.Content = $"m.dmg: {warrior.mdamage}";
+                crt_dmg.Content = $"crt.dmg: {warrior.crtDamage}";
+                armor.Content = $"armor: {warrior.armor}";
+                mag_def.Content = $"m.defense: {warrior.mdefense}";
+                crt_chance.Content = $"crt_chance: {warrior.crtChance}";
 
             }
-            if (choice.SelectedItem.ToString() == "Rogue") 
+            if (choice.SelectedItem.ToString() == "Rogue")
             {
 
-                    HP.Content = $"HP: {rogue.health}";
-                    MANA.Content = $"MANA: {rogue.mana}";
-                    lbDexterity.Content = $"dexterity: {rogue.dexterity}";
-                    lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
-                    lbStrength.Content = $"Strength: {rogue.strength}";
-                    lbVitality.Content = $"Vitality: {rogue.vitality}";
-                    phys_dmg.Content = $"p.dmg: {rogue.pdamage}";
-                    mag_dmg.Content = $"m.dmg: {rogue.mdamage}";
-                    crt_dmg.Content = $"crt.dmg: {rogue.crtDamage}";
-                    armor.Content = $"armor: {rogue.armor}";
-                    mag_def.Content = $"m.defense: {rogue.mdefense}";
-                    crt_chance.Content = $"crt_chance: {rogue.crtChance}";
+                HP.Content = $"HP: {rogue.health}";
+                MANA.Content = $"MANA: {rogue.mana}";
+                lbDexterity.Content = $"dexterity: {rogue.dexterity}";
+                lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
+                lbStrength.Content = $"Strength: {rogue.strength}";
+                lbVitality.Content = $"Vitality: {rogue.vitality}";
+                phys_dmg.Content = $"p.dmg: {rogue.pdamage}";
+                mag_dmg.Content = $"m.dmg: {rogue.mdamage}";
+                crt_dmg.Content = $"crt.dmg: {rogue.crtDamage}";
+                armor.Content = $"armor: {rogue.armor}";
+                mag_def.Content = $"m.defense: {rogue.mdefense}";
+                crt_chance.Content = $"crt_chance: {rogue.crtChance}";
 
             }
             if (choice.SelectedItem.ToString() == "Wizard")
             {
-                    HP.Content = $"HP: {wizard.health}";
-                    MANA.Content = $"MANA: {wizard.mana}";
-                    lbDexterity.Content = $"dexterity: {wizard.dexterity}";
-                    lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
-                    lbStrength.Content = $"Strength: {wizard.strength}";
-                    lbVitality.Content = $"Vitality: {wizard.vitality}";
-                    phys_dmg.Content = $"p.dmg: {wizard.pdamage}";
-                    mag_dmg.Content = $"m.dmg: {wizard.mdamage}";
-                    crt_dmg.Content = $"crt.dmg: {wizard.crtDamage}";
-                    armor.Content = $"armor: {wizard.armor}";
-                    mag_def.Content = $"m.defense: {wizard.mdefense}";
-                    crt_chance.Content = $"crt_chance: {wizard.crtChance}";
+                HP.Content = $"HP: {wizard.health}";
+                MANA.Content = $"MANA: {wizard.mana}";
+                lbDexterity.Content = $"dexterity: {wizard.dexterity}";
+                lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
+                lbStrength.Content = $"Strength: {wizard.strength}";
+                lbVitality.Content = $"Vitality: {wizard.vitality}";
+                phys_dmg.Content = $"p.dmg: {wizard.pdamage}";
+                mag_dmg.Content = $"m.dmg: {wizard.mdamage}";
+                crt_dmg.Content = $"crt.dmg: {wizard.crtDamage}";
+                armor.Content = $"armor: {wizard.armor}";
+                mag_def.Content = $"m.defense: {wizard.mdefense}";
+                crt_chance.Content = $"crt_chance: {wizard.crtChance}";
             }
         }
 
@@ -405,18 +405,39 @@ namespace proektik
                 }
             }
         }
+            public void UpdateLvl()
+            {
+                if (exp < level * 1000)
+                {
+                    experience.Content = $"experience: {exp}/{level * 1000}";
+                }
+                else
+                {
+                    tokens += 5;
+                    exp = exp - level * 1000;
+                    level++;
+                    lvl.Content = $"lvl: {level}";
+                    experience.Content = $"experience: {exp}/{level * 1000}";
+                    TokenCount.Text = $"{tokens}";
+                }
+            }
+            private void btn100_Click(object sender, RoutedEventArgs e)
+            {
+                exp += 100;
+                UpdateLvl();
+            }
 
-        private void TokenCount_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
+            private void btn500_Click(object sender, RoutedEventArgs e)
             {
-                tokens = Convert.ToInt32(TokenCount.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Введите число,а не строку!!!");
-            }
-           
+                exp += 500;
+                UpdateLvl();
         }
-    }
-}
+
+            private void btn1000_Click(object sender, RoutedEventArgs e)
+            {
+                exp += 1000;
+                UpdateLvl();
+            }
+        }
+    } 
+
