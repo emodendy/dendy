@@ -111,7 +111,8 @@ namespace proektik
                             lbStrength.Content = $"Strength: {warrior.strength}";
                             warrior.health += 1;
                             HP.Content = $"HP: {warrior.health}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -133,7 +134,8 @@ namespace proektik
                             lbStrength.Content = $"Strength: {rogue.strength}";
                             hprogbuffer += 0.5;
                             HP.Content = $"HP: {rogue.health}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -155,7 +157,8 @@ namespace proektik
                             lbStrength.Content = $"Strength: {wizard.strength}";
                             hpwizbuffer += 0.2;
                             HP.Content = $"HP: {wizard.health}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -188,7 +191,8 @@ namespace proektik
                             lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
                             warrior.crtDamage += 1;
                             crt_dmg.Content = $"crt.dmg: {warrior.crtDamage}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -210,7 +214,8 @@ namespace proektik
                             lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
                             rogue.crtDamage += 1;
                             crt_dmg.Content = $"crt.dmg: {rogue.crtDamage}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -232,7 +237,8 @@ namespace proektik
                             lbDexterity.Content = $"Dexterity: {wizard.dexterity}";
                             wizard.crtDamage += 1;
                             crt_dmg.Content = $"crt.dmg: {wizard.crtDamage}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -265,7 +271,8 @@ namespace proektik
                             lbVitality.Content = $"Vitality: {warrior.vitality}";
                             warrior.health += 2;
                             HP.Content = $"HP: {warrior.health}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -288,7 +295,8 @@ namespace proektik
                             hprogbuffer += 1.5;
                             rogue.health = Convert.ToInt32(30 + hprogbuffer);
                             HP.Content = $"HP: {rogue.health}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -311,7 +319,8 @@ namespace proektik
                             hpwizbuffer += 1.4;
                             wizard.health = Convert.ToInt32(21 + hpwizbuffer);
                             HP.Content = $"HP: {wizard.health}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -344,7 +353,8 @@ namespace proektik
                             lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
                             warrior.mana += 1;
                             MANA.Content = $"MANA: {warrior.mana}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -367,7 +377,8 @@ namespace proektik
                             manarogbuffer += 1.2;
                             rogue.mana = Convert.ToInt32(18 + manarogbuffer);
                             MANA.Content = $"MANA: {rogue.mana}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -381,7 +392,6 @@ namespace proektik
                 }
                 if (choice.SelectedItem.ToString() == "Wizard")
                 {
-
                     if (wizard.inteligence < wizard.maxInteligence)
                     {
                         if (tokens > 0)
@@ -391,7 +401,8 @@ namespace proektik
                             manawizbuffer += 1.5;
                             wizard.mana = Convert.ToInt32(52 + manawizbuffer);
                             MANA.Content = $"MANA: {wizard.mana}";
-                            TokenCount.Text = (tokens - 1).ToString();
+                            tokens--;
+                            TokenCount.Content = $"{tokens}";
                         }
                         else
                         {
@@ -405,22 +416,29 @@ namespace proektik
                 }
             }
         }
-            public void UpdateLvl()
+        public void UpdateLvl()
+        {
+            switch (level)
             {
-                if (exp < level * 1000)
-                {
-                    experience.Content = $"experience: {exp}/{level * 1000}";
-                }
-                else
-                {
-                    tokens += 5;
-                    exp = exp - level * 1000;
-                    level++;
-                    lvl.Content = $"lvl: {level}";
-                    experience.Content = $"experience: {exp}/{level * 1000}";
-                    TokenCount.Text = $"{tokens}";
-                }
+                case 50:
+                    MessageBox.Show("Max level reached!!!");
+                    break;
+                default:
+                    if (exp < level * 1000)
+                    {
+                        experience.Content = $"experience: {exp}/{level * 1000}";
+                    }
+                    else
+                    {
+                        tokens += 5;
+                        exp = exp - level * 1000;
+                        level++;
+                        lvl.Content = $"lvl: {level}";
+                        experience.Content = $"experience: {exp}/{level * 1000}";
+                        TokenCount.Content = $"{tokens}";
+                    } break;
             }
+        }
             private void btn100_Click(object sender, RoutedEventArgs e)
             {
                 exp += 100;
