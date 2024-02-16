@@ -25,6 +25,16 @@ namespace proektik
         double hpwizbuffer = 0;
         double manarogbuffer = 0;
         double manawizbuffer = 0.5;
+        double crtchancewar = 0;
+        double crtchancerog = 0;
+        double crtchancewiz = 0;
+        double mdefencewar = 0;
+        double mdefencerog = 0.5;
+        double mdamagewar = 0;
+        double mdamagerog = 0;
+        double armorRog = 0;
+        double pdamagerog = 0;
+        double pdamagewiz = 0.5;
         int tokens = 0;
         int level = 1;
         int exp = 0;
@@ -107,6 +117,8 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            warrior.pdamage += 1;
+                            phys_dmg.Content = $"p.dmg: {warrior.pdamage}";
                             warrior.strength += 1;
                             lbStrength.Content = $"Strength: {warrior.strength}";
                             warrior.health += 1;
@@ -130,6 +142,9 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            pdamagerog += 0.5;
+                            rogue.pdamage = Convert.ToInt32(10 + pdamagerog);
+                            phys_dmg.Content = $"p.dmg: {rogue.pdamage}";
                             rogue.strength += 1;
                             lbStrength.Content = $"Strength: {rogue.strength}";
                             hprogbuffer += 0.5;
@@ -153,6 +168,9 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            pdamagewiz += 0.5;
+                            wizard.pdamage = Convert.ToInt32(7 + pdamagewiz);
+                            phys_dmg.Content = $"p.dmg: {wizard.pdamage}";
                             wizard.strength += 1;
                             lbStrength.Content = $"Strength: {wizard.strength}";
                             hpwizbuffer += 0.2;
@@ -187,6 +205,11 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            warrior.armor += 1;
+                            armor.Content = $"armor: {warrior.armor}";
+                            crtchancewar += 0.2;
+                            warrior.crtChance = Convert.ToInt32(3 + crtchancewar);
+                            crt_chance.Content = $"crt.chance: {warrior.crtChance}";
                             warrior.dexterity += 1;
                             lbDexterity.Content = $"Dexterity: {warrior.dexterity}";
                             warrior.crtDamage += 1;
@@ -210,6 +233,15 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            pdamagerog += 0.5;
+                            rogue.pdamage = Convert.ToInt32(10 + pdamagerog);
+                            phys_dmg.Content = $"p.dmg: {rogue.pdamage}";
+                            armorRog += 1.5;
+                            rogue.armor = Convert.ToInt32(45 + armorRog);
+                            armor.Content = $"armor: {rogue.armor}";
+                            crtchancerog += 0.2;
+                            rogue.crtChance = Convert.ToInt32(6 + crtchancerog);
+                            crt_chance.Content = $"crt.chance: {rogue.crtChance}";
                             rogue.dexterity += 1;
                             lbDexterity.Content = $"Dexterity: {rogue.dexterity}";
                             rogue.crtDamage += 1;
@@ -233,6 +265,11 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            wizard.armor += 1;
+                            armor.Content = $"armor: {wizard.armor}";
+                            crtchancewiz += 0.2;
+                            wizard.crtChance = Convert.ToInt32(4 + crtchancewiz);
+                            crt_chance.Content = $"crt.chance: {wizard.crtChance}";
                             wizard.dexterity += 1;
                             lbDexterity.Content = $"Dexterity: {wizard.dexterity}";
                             wizard.crtDamage += 1;
@@ -349,6 +386,12 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            mdamagewar += 0.2;
+                            warrior.mdamage = Convert.ToInt32(2 + mdamagewar);
+                            mag_dmg.Content = $"m.dmg: {warrior.mdamage}";
+                            mdefencewar += 0.5;
+                            warrior.mdefense = Convert.ToInt32(5 + mdefencewar);
+                            mag_def.Content = $"m.defense: {warrior.mdefense}";
                             warrior.inteligence += 1;
                             lbInteligence.Content = $"Inteligence: {warrior.inteligence}";
                             warrior.mana += 1;
@@ -372,6 +415,12 @@ namespace proektik
                     {
                         if (tokens > 0)
                         {
+                            mdamagerog += 0.2;
+                            rogue.mdamage = Convert.ToInt32(3 + mdamagerog);
+                            mag_dmg.Content = $"m.dmg: {rogue.mdamage}";
+                            mdefencerog += 0.5;
+                            rogue.mdefense = Convert.ToInt32(7 + mdefencerog);
+                            mag_def.Content = $"m.defense: {rogue.mdefense}";
                             rogue.inteligence += 1;
                             lbInteligence.Content = $"Inteligence: {rogue.inteligence}";
                             manarogbuffer += 1.2;
@@ -397,6 +446,8 @@ namespace proektik
                         if (tokens > 0)
                         {
                             wizard.inteligence += 1;
+                            wizard.mdefense += 1;
+                            mag_def.Content = $"m.defense: {wizard.mdefense}";
                             lbInteligence.Content = $"Inteligence: {wizard.inteligence}";
                             manawizbuffer += 1.5;
                             wizard.mana = Convert.ToInt32(52 + manawizbuffer);
